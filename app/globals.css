@@ -31,6 +31,10 @@ body {
   background-color: rgb(31, 36, 42);
 }
 
+.panel-bg {
+  background-color: rgba(236, 236, 236, 0.2);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

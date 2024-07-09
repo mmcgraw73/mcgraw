@@ -1,35 +1,63 @@
-'use client';
+import { SetStateAction, useState } from 'react';
+import Modal from '../app/components/modal';
+import dummyWorks from '../public/dummy';
 
-import React from 'react';
-import Vanta from "../app/components/vantabg";
-import Nav from "../app/components/nav";
+const Work = ({ works }: { works: any[] }) => {
+  interface Job {
+    id: number;
+    title: string;
+    description: string;
+    startDate: string;
+    endDate: string;
+    // Add more properties as needed
+  }
+  
+  const [selectedWork, setSelectedWork] = useState<null | Job>(null);
 
-// Example data array
-const works = [
-  { id: 1, title: 'mcgraw.io', description: 'Jun 2024 - ' },
-  { id: 2, title: 'listen360', description: 'May 2019 - Jun 2024' },
-  { id: 3, title: 'cricket wireless', description: 'Dec 2017 - May 2019' },
-  // Add more projects as needed
-];
+  const openModal = (work: SetStateAction<Job | null>) => {
+    setSelectedWork(work);
+  };
 
-export default function Work() {
+  const closeModal = () => {
+    setSelectedWork(null);
+  };
+
   return (
-    <main className="flex min-h-screen min-w-screen flex-col">
-      <Nav />
-      <Vanta />
-      <div className="flex flex-col p-10">
-        <span className="text-3xl">m.mcgraw</span>
-        <span className="text-xl">work</span>
-        {/* Grid layout for work items */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {works.map((work) => (
-            <div key={work.id} className="mb-4 w-full md:w-300px panel-bg p-4 rounded-lg shadow">
-              <h3 className="text-2xl">{work.title}</h3>
-              <p>{work.description}</p>
-            </div>
-          ))}
-        </div>
+    <div>
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {works.map((work) => (
+          <div
+            key={work.id}
+            className="mb-4 w-full md:w-300px panel-bg p-4 rounded-lg shadow cursor-pointer"
+            onClick={() => openModal(work)}
+          >
+            <h3 className="text-xl">{work.title}</h3>
+            <p>{work.company}</p>
+            <p>
+              {work.startDate} - {work.endDate}
+            </p>
+            <p>{work.description}</p>
+          </div>
+        ))}
       </div>
-    </main>
+
+      {selectedWork && (
+        <Modal onClose={closeModal}>
+          <h2 className="text-3xl">{selectedWork.title}</h2>
+          <p>{selectedWork.description}</p>
+          {/* Add more details as needed */}
+        </Modal>
+      )}
+    </div>
   );
-}
+};
+
+const Experience = () => {
+  return (
+    <div>
+      <Work works={dummyWorks} />
+    </div>
+  );
+};
+
+export default Experience;

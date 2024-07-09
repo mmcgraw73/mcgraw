@@ -4,7 +4,7 @@ import React from 'react';
 
 const Nav = () => {
   return (
-    <nav style={{ position: 'sticky', top: 0, zIndex: 1000 }}>
+    <nav style={{ position: 'sticky', top: 20, zIndex: 1000 }}>
       <ul className="" style={{ listStyle: 'none', display: 'flex', justifyContent: 'space-around' }}>
         <li>
           <Link href="/">

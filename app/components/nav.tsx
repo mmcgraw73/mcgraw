@@ -17,8 +17,8 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link href="/about">
-            about
+          <Link href="/more">
+            more
           </Link>
         </li>
         <li>

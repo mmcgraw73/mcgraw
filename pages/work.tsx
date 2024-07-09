@@ -6,8 +6,9 @@ import Nav from "../app/components/nav";
 
 // Example data array
 const works = [
-  { id: 1, title: 'listen360', description: 'May 2019 - Jun 2024' },
-  { id: 2, title: 'cricket wireless', description: 'Dec 2017 - May 2019' },
+  { id: 1, title: 'mcgraw.io', description: 'Jun 2024 - ' },
+  { id: 2, title: 'listen360', description: 'May 2019 - Jun 2024' },
+  { id: 3, title: 'cricket wireless', description: 'Dec 2017 - May 2019' },
   // Add more projects as needed
 ];
 
@@ -16,7 +17,7 @@ export default function Work() {
     <main className="flex min-h-screen min-w-screen flex-col">
       <Nav />
       <Vanta />
-      <div className="flex flex-col p-20">
+      <div className="flex flex-col p-10">
         <span className="text-3xl">m.mcgraw</span>
         <span className="text-xl">work</span>
         {/* Grid layout for work items */}

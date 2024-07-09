@@ -35,6 +35,18 @@ body {
   background-color: rgba(236, 236, 236, 0.2);
 }
 
+li.circle-bg {
+  background-color: rgba(236, 236, 236, 0.2);
+  border-radius: 9999px;
+  z-index: 4;
+  margin-top: -25px;
+  padding: 30px;
+}
+
+li.circle-bg:hover {
+  background-color: rgba(236, 236, 236, 0.4);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

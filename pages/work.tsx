@@ -1,18 +1,26 @@
-import { SetStateAction, useState } from 'react';
+'use client';
+import { SetStateAction, useState, useEffect } from 'react';
 import Modal from '../app/components/modal';
 import dummyWorks from '../public/dummy';
+import Vanta from "../app/components/vantabg";
+import styles from './work.module.css'; // Assuming you're using CSS modules
 
-const Work = ({ works }: { works: any[] }) => {
-  interface Job {
-    id: number;
-    title: string;
-    description: string;
-    startDate: string;
-    endDate: string;
-    // Add more properties as needed
-  }
-  
+interface Job {
+  id: number;
+  title: string;
+  description: string;
+  company: string;
+  startDate: string;
+  endDate: string;
+}
+
+const Work = ({ works = [] }: { works?: Job[] }) => {
   const [selectedWork, setSelectedWork] = useState<null | Job>(null);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const openModal = (work: SetStateAction<Job | null>) => {
     setSelectedWork(work);
@@ -22,9 +30,14 @@ const Work = ({ works }: { works: any[] }) => {
     setSelectedWork(null);
   };
 
+  if (!isClient) {
+    return null;
+  }
+
   return (
     <div>
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <Vanta />
+      <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
         {works.map((work) => (
           <div
             key={work.id}
@@ -51,13 +64,5 @@ const Work = ({ works }: { works: any[] }) => {
     </div>
   );
 };
-
-const Experience = () => {
-  return (
-    <div>
-      <Work works={dummyWorks} />
-    </div>
-  );
-};
-
-export default Experience;
+const WorkComponent = () => <Work works={dummyWorks} />;
+export default WorkComponent;

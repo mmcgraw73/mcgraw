@@ -1,9 +1,18 @@
-// pages/_app.tsx
-import '../app/globals.css'; // Import global styles here
-import type { AppProps } from 'next/app';
+import App from 'next/app';
+import type { AppProps, AppContext } from 'next/app';
+import RootLayout from '../app/layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <RootLayout>
+      <Component {...pageProps} />
+    </RootLayout>
+  );
 }
+
+MyApp.getInitialProps = async (appContext: AppContext) => {
+  const appProps = await App.getInitialProps(appContext);
+  return { ...appProps };
+};
 
 export default MyApp;

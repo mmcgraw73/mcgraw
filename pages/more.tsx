@@ -7,7 +7,6 @@ import Nav from "../app/components/nav";
 export default function More() {
   return (
     <main className="flex min-h-screen min-w-screen flex-col">
-      <Nav />
       <Vanta />
       <div className="flex flex-col p-10">
         <span className="text-3xl">m.mcgraw</span>

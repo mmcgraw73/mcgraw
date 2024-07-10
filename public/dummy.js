@@ -22,7 +22,7 @@ const dummy = [
     company: "JobMarketMaker / CareerBuilder",
     title: "Frontend Developer",
     description:
-      "built the frontend of a recruiting application using angular, implemented responsive designs, optimized performance, and ensured cross-browser compatibility",
+      "built the frontend of a recruiting application using AngularJS, incorporating common libraries such as `ngRoute` for routing, `ngAnimate` for animations, and `ngResource` for RESTful interactions. Implemented responsive designs, optimized performance, and ensured cross-browser compatibility.",
     startDate: "2016/07",
     endDate: "2018/02",
   },

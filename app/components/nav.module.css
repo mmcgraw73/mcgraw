@@ -33,3 +33,12 @@
   text-decoration: none;
   color: inherit; 
 }
+
+.navLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: #F97316; /* orange-500 */
+}

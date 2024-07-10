@@ -45,11 +45,11 @@ const Work = ({ works = [] }: { works?: Job[] }) => {
             onClick={() => openModal(work)}
           >
             <h3 className="text-xl">{work.title}</h3>
-            <p>{work.company}</p>
+            <p className="text-orange-500 font-semibold">{work.company}</p>
             <p>
               {work.startDate} - {work.endDate}
             </p>
-            <p>{work.description}</p>
+            <p className="text-sm mt-4">{work.description}</p>
           </div>
         ))}
       </div>
@@ -57,7 +57,7 @@ const Work = ({ works = [] }: { works?: Job[] }) => {
       {selectedWork && (
         <Modal onClose={closeModal}>
           <h2 className="text-3xl">{selectedWork.title}</h2>
-          <p>{selectedWork.description}</p>
+          <p className="text-sm">{selectedWork.description}</p>
           {/* Add more details as needed */}
         </Modal>
       )}

@@ -1,30 +1,28 @@
 // components/Nav.tsx
 import Link from 'next/link';
-import React from 'react';
-import styles from './nav.module.css'; // Import the CSS module 
-
+import React from 'react'; 
 
 const Nav = () => {
   return (
     <nav style={{ position: 'sticky', top: 20, zIndex: 1000 }}>
-      <ul style={{ listStyle: 'none', display: 'flex', justifyContent: 'space-around' }}>
+      <ul className="" style={{ listStyle: 'none', display: 'flex', justifyContent: 'space-around' }}>
         <li>
-          <Link href="/" className={styles.navLink}>
+          <Link href="/">
             home
           </Link>
         </li>
         <li>
-          <Link href="/work" className={styles.navLink}>
+          <Link href="/work">
             work
           </Link>
         </li>
         <li>
-          <Link href="/more" className={styles.navLink}>
+          <Link href="/more">
             more
           </Link>
         </li>
         <li>
-          <Link href="https://github.com/mmcgraw73/mcgraw" className={styles.navLink}>
+          <Link href="https://github.com/mmcgraw73/mcgraw">
             github
           </Link>
         </li>

@@ -23,10 +23,13 @@
   }
 }
 
+html, body {
+ font-family: 'code', monospace;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   padding: 0;
-  font-family: 'code', monospace;
   color: rgb(154, 245, 230);
   background-color: rgb(31, 36, 42);
 }

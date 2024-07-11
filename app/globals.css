@@ -9,6 +9,23 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('/fonts/fontawesome-pro/fontawesome-webfont.woff2') format('woff2'),
+       url('/fonts/fontawesome-pro/fontawesome-webfont.woff') format('woff'),
+       url('/fonts/fontawesome-pro/fontawesome-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fa {
+  font-family: 'FontAwesome';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

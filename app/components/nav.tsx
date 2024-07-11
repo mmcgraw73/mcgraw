@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import React from 'react'; 
+import React from 'react';
 
 const Nav = () => {
   return (
@@ -23,7 +23,12 @@ const Nav = () => {
         </li>
         <li>
           <Link href="https://github.com/mmcgraw73/mcgraw">
-            github
+            <i className="fa-brands fa-github-alt"></i>
+          </Link>
+        </li>
+        <li>
+          <Link href="https://www.linkedin.com/in/mcgraw-profile/">
+            <i className="fa-brands fa-linkedin"></i>
           </Link>
         </li>
         {/* Add more navigation links as needed */}

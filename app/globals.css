@@ -1,6 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 @font-face {
   font-family: 'code';
@@ -61,11 +61,6 @@ li:hover {
   color: #F97316; /* This is the hex code for orange-500 */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
 
 .grid-container { width: 100%; position: absolute; bottom: 0; left: 0; }
 

@@ -6,6 +6,9 @@ export default function Crypto() {
   return (
     <main className="flex min-h-screen min-w-screen flex-col">
       <Vanta />
+      <div>
+        <h1 className="text-6xl font-bold text-center text-white">Crypto Dashboard</h1>
+      </div>
       <div className="flex flex-col p-10 w-1/3">
         <div className="flex flex-col">
           <div className="h-auto w- border-1 neon-border p-8 mt-10 bg-light-green border-radius">

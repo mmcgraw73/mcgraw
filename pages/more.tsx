@@ -30,18 +30,3 @@ export default function More() {
       </main>
   );
 }
-
-const x = 2;
-let y = 4;
-function update(arg) {
-  return Math.random() + y * arg;
-}
-y = 2;
-
-if (y < 3) {
-  y = 3;
-} else {
-  y = 4;
-}
-const result = update(x);
-// result must be between 6 and 7

@@ -1,7 +1,5 @@
 'use client';
-
 import dynamic from "next/dynamic";
-
 const Vanta = dynamic(() => import("../app/components/vantabg"), { ssr: false });
 
 export default function Home() {

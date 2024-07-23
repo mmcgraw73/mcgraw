@@ -2,17 +2,23 @@
 
 import React from 'react';
 import Vanta from "../app/components/vantabg";
+import DateTrivia from '@/app/components/datetrivia';
+import TriviaGame from '@/app/components/triviagame';
 
 export default function More() {
+  let date = new Date().toLocaleDateString();
   return (
     <main className="flex min-h-screen min-w-screen flex-col">
       {/* <Vanta /> */}
       <div className="flex flex-col p-10 w-1/2 h-20 pt-20">
-        <span className="text-3xl">m.mcgraw</span>
-        <div className="flex items-center">
-          <span className="text-xl">currently coding here...</span>
-          <span className="blinking-cursor">|</span>
-        </div>
+      <div className="flex items-center">
+        <span className="text-3xl">shall we play a game?</span><span className="blinking-cursor">|</span>
+                </div>
+          <span className="text-xl">
+            <TriviaGame />
+          </span>
+          
+
         
         </div>
         <div id="monitor">

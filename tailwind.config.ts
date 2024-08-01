@@ -11,6 +11,9 @@ const config: Config = {
       borderColor: {
         neonGreen: 'rgba(57, 255, 20, 0.3)',
       },
+      fontFamily: {
+        galaga: ['emulogic', 'sans-serif'],
+      },
       boxShadow: {
         neonGreen: '0 0 5px rgba(57, 255, 20, 0.3), 0 0 10px rgba(57, 255, 20, 0.3), 0 0 20px rgba(57, 255, 20, 0.3), 0 0 30px rgba(57, 255, 20, 0.3)',
       },
@@ -23,4 +26,6 @@ const config: Config = {
   },
   plugins: [],
 };
+
 export default config;
+

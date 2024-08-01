@@ -8,7 +8,12 @@
   font-weight: normal;
   font-style: normal;
 }
-
+@font-face {
+  font-family: 'galaga';
+  src: url('/fonts/emulogic.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
 @font-face {
   font-family: 'FontAwesome';
   src: url('/fonts/fontawesome-pro/fontawesome-webfont.woff2') format('woff2'),

@@ -12,7 +12,7 @@ export default function More() {
       {/* <Vanta /> */}
       <div className="flex flex-col p-10 w-1/2 h-20 pt-20">
       <div className="flex items-center">
-        <span className="text-3xl">shall we play a game?</span><span className="blinking-cursor">|</span>
+        <span className="text-3xl">while this page is being built, shall we play a game?</span><span className="blinking-cursor">|</span>
                 </div>
           <span className="text-xl">
             <TriviaGame />

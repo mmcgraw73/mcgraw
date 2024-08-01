@@ -169,17 +169,16 @@ const TriviaGame: React.FC = () => {
         </div>
       )}
       {!showAnswer ? (
-        <div>
+        <div className="font-galaga">
           <button
-          className="mr-6"
+          className="mr-6 hover:text-green-500"
             onClick={(event) => handleAnswer('True', event)}
-            style={{ backgroundColor: selectedAnswer === 'True' ? 'lightblue' : 'white' }}
+            
           >
             True
           </button>
           <button
             onClick={(event) => handleAnswer('False', event)}
-            style={{ backgroundColor: selectedAnswer === 'False' ? 'lightblue' : 'white' }}
           >
             False
           </button>

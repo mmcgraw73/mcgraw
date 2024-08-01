@@ -3,7 +3,7 @@ import { SetStateAction, useState, useEffect } from 'react';
 import Modal from '../app/components/modal';
 import dummyWorks from '../public/dummy';
 import Vanta from "../app/components/vantabg";
-import styles from './work.module.css'; // Assuming you're using CSS modules
+import styles from './work.module.css';
 
 interface Job {
   id: number;

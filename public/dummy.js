@@ -4,7 +4,7 @@ const dummy = [
     company: "Listen360 / EverCommerce",
     title: "Frontend Engineer",
     description:
-      "I designed user interfaces and architected complex dashboards using Vue, Pinia, Vuex, React, and TypeScript, ensuring a seamless and intuitive user experience. My work involved building robust and scalable solutions that enhanced the application's functionality and performance.",
+      "developed comprehensive reports, interactive dashboards, and robust data visualizations from Figma prototypes Leveraged modern technologies including Vue, Vuex, Pinia, Webpack, Rollup, React, and Jest to enhance application performance and maintainability. Architected frontend solutions with a focus on API integration, micro-strategies, and componentization to ensure scalable and modular codebases",
     startDate: "2019/05",
     endDate: "2024/07",
   },
@@ -13,7 +13,7 @@ const dummy = [
     company: "Cricket Wireless / AT&T",
     title: "Senior Frontend Developer",
     description:
-      "As a Senior Frontend Developer, I played a pivotal role in enhancing a global application by leveraging Angular, RxJS, NgRx, and Sass to deliver a seamless and responsive user experience. My contributions included architecting state management solutions and optimizing performance, which significantly improved the application's scalability and maintainability",
+      "as a Senior Frontend Developer, I played a pivotal role in enhancing a global application by leveraging Angular, RxJS, NgRx, and Sass to deliver a seamless and responsive user experience. My contributions included architecting state management solutions and optimizing performance, which significantly improved the application's scalability and maintainability",
     startDate: "2018/03",
     endDate: "2019/04",
   },
@@ -23,7 +23,7 @@ const dummy = [
     company: "BlueAcorn",
     title: "Frontend Developer",
     description:
-      "improved the user experience for e-commerce applications using Magento, HTML, CSS, and JavaScript. ",
+      "during my tenure at BlueAcorn, I significantly enhanced the user experience for various e-commerce applications by leveraging Magento, HTML, CSS, and JavaScript. I meticulously crafted responsive and visually appealing interfaces that catered to a diverse user base, ensuring seamless navigation and interaction across different devices and browsers.",
     startDate: "2015/01",
     endDate: "2016/06",
   },

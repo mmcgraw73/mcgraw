@@ -1,6 +1,13 @@
 
-## mcgraw.io - an in-progress frontend engineer portfolio
+## mcgraw.io
+### this portfolio is being built with next.js, react, & typescript
+###
 
+### todo:
+- finish plan
+- finish three.js scene
+-
+- 
 ## start by running:
 
 ```bash

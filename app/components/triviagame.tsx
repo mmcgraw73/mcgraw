@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 interface Question {
   question: string;
@@ -18,6 +18,8 @@ const TriviaGame: React.FC = () => {
   const [showAward, setShowAward] = useState(false);
   const [lightColors, setLightColors] = useState<Array<'red' | 'yellow' | 'green'>>(Array(10).fill('yellow'));
 
+  const trueButtonRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     const fetchQuestions = async () => {
       const response = await fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=boolean');
@@ -28,62 +30,14 @@ const TriviaGame: React.FC = () => {
     fetchQuestions();
   }, []);
 
-  const handleKeyDown = (event: KeyboardEvent) => {
-    event.preventDefault(); // Prevent default behavior for arrow keys
-  
-    const handleAnswer = (answer: string, event?: React.MouseEvent) => {
-      if (event && !mouseEnabled) {
-        setWarning('What year was the first consumer mouse available to consumers? (1977, 1980, 1983)');
-        return;
-      }
-      setUserAnswer(answer);
-      setShowAnswer(true);
-      const newLightColors = [...lightColors];
-      if (answer === questions[currentQuestionIndex].correct_answer) {
-        setScore(score + 1);
-        newLightColors[currentQuestionIndex] = 'green';
-      } else {
-        newLightColors[currentQuestionIndex] = 'red';
-      }
-      setLightColors(newLightColors);
-      setTimeout(() => {
-        nextQuestion();
-      }, 2000); // Move to next question after 2 seconds
-    };
-  
-    const nextQuestion = () => {
-      setShowAnswer(false);
-      setUserAnswer(null);
-      setSelectedAnswer(null);
-      setWarning(null);
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-    };
-  
-    if (showAnswer) {
-      if (event.key === 'Enter') {
-        nextQuestion();
-      }
-      return;
-    }
-  
-    if (event.key === 'ArrowLeft') {
-      setSelectedAnswer('True');
-    } else if (event.key === 'ArrowRight') {
-      setSelectedAnswer('False');
-    } else if (event.key === 'Enter' && selectedAnswer) {
-      handleAnswer(selectedAnswer);
-    }
-  };
-  
   useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [showAnswer, selectedAnswer, currentQuestionIndex, lightColors, mouseEnabled, questions, score]);
+    if (!showAnswer && trueButtonRef.current) {
+      trueButtonRef.current.focus();
+    }
+  }, [showAnswer, currentQuestionIndex]);
 
   const handleAnswer = (answer: string, event?: React.MouseEvent) => {
-    if (event && !mouseEnabled) {
+    if (!mouseEnabled) {
       setWarning('What year was the first consumer mouse available to consumers? (1977, 1980, 1983)');
       return;
     }
@@ -109,7 +63,8 @@ const TriviaGame: React.FC = () => {
       setShowAward(true);
       setTimeout(() => setShowAward(false), 3000); // Hide award notification after 3 seconds
     } else {
-      setWarning('Incorrect. Please use the arrow keys and enter key to play the game.');
+      setWarning('Incorrect. Please select the correct year.');
+      setTimeout(() => setWarning(null), 3000); // Hide warning after 3 seconds
     }
   };
 
@@ -121,7 +76,7 @@ const TriviaGame: React.FC = () => {
     setCurrentQuestionIndex(currentQuestionIndex + 1);
   };
 
-  if (questions.length === 0) {
+  if (!questions || questions.length === 0) {
     return <div>Loading...</div>;
   }
 
@@ -138,7 +93,6 @@ const TriviaGame: React.FC = () => {
 
   return (
     <div>
-      
       <div className="flex items-center">
         {lightColors.map((color, index) => (
           <div
@@ -148,7 +102,7 @@ const TriviaGame: React.FC = () => {
               height: '30px',
               backgroundColor: color,
               borderRadius: '50%',
-              margin: '0 5px'
+              margin: '20px 5px'
             }}
           ></div>
         ))}
@@ -158,9 +112,9 @@ const TriviaGame: React.FC = () => {
       {warning && (
         <div>
           <p style={{ color: 'red' }}>{warning}</p>
-          <button onClick={() => handleWarningAnswer(1977)}>1977</button>
-          <button onClick={() => handleWarningAnswer(1980)}>1980</button>
-          <button onClick={() => handleWarningAnswer(1983)}>1983</button>
+          <button className="mr-3" onClick={() => handleWarningAnswer(1977)}>1977</button>
+          <button className="mr-3" onClick={() => handleWarningAnswer(1980)}>1980</button>
+          <button className="mr-3" onClick={() => handleWarningAnswer(1983)}>1983</button>
         </div>
       )}
       {showAward && (
@@ -169,15 +123,16 @@ const TriviaGame: React.FC = () => {
         </div>
       )}
       {!showAnswer ? (
-        <div className="font-galaga">
+        <div className="font-galaga text-xs mt-8">
           <button
-          className="mr-6 hover:text-green-500"
+            ref={trueButtonRef}
+            className={`mr-6 text-xl ${selectedAnswer === 'True' ? 'selected' : ''}`}
             onClick={(event) => handleAnswer('True', event)}
-            
           >
             True
           </button>
           <button
+            className={`text-xl ${selectedAnswer === 'False' ? 'selected' : ''}`}
             onClick={(event) => handleAnswer('False', event)}
           >
             False

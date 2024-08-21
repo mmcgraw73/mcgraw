@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
+/* @font-face {
   font-family: 'code';
   src: url('/fonts/monocode-medium.ttf') format('ttf');
   font-weight: normal;
@@ -21,7 +21,7 @@
        url('/fonts/fontawesome-pro/fontawesome-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 .fa {
   font-family: 'FontAwesome';

@@ -1,3 +1,6 @@
+
+## mcgraw.io - an in-progress frontend engineer portfolio
+
 ## start by running:
 
 ```bash

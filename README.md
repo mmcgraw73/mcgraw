@@ -18,6 +18,10 @@ pnpm dev
 
 [localhost:3000](http://localhost:3000)
 
+## or checkout the live site:
+
+[mcgraw.io](https://mcgraw.io)
+
 
 ## current home page 
 

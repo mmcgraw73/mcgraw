@@ -37,10 +37,7 @@ const TriviaGame: React.FC = () => {
   }, [showAnswer, currentQuestionIndex]);
 
   const handleAnswer = (answer: string, event?: React.MouseEvent) => {
-    if (!mouseEnabled) {
-      setWarning('What year was the first consumer mouse available to consumers? (1977, 1980, 1983)');
-      return;
-    }
+    
     setUserAnswer(answer);
     setShowAnswer(true);
     const newLightColors = [...lightColors];

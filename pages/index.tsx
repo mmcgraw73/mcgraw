@@ -452,17 +452,20 @@ export default function Home() {
                 m.mcgraw
               </h1>
               <p className="text-neonGreen text-sm">
-                software engineer @ booz allen hamilton
+                mcgraw.io software studio
+              </p>
+              <p className="text-neonGreen text-sm">
+                &amp; sr. software engineer @boozallen
               </p>
             </div>
 
             {/* Section 1: Current Role */}
             <div className="text-green-400 mb-2 text-sm">
-              <span className="text-orange-500">$</span> cat ~/booz-allen/current-role.txt
+              <span className="text-orange-500">$</span> cat ~/mcgraw-io/company-profile.txt
             </div>
             <div className="pl-4 border-l-2 border-neonGreen/30 mb-8">
               <p className="text-gray-300 leading-relaxed">
-                Software Engineer at <span className="text-orange-500 font-semibold">Booz Allen Hamilton</span>, developing enterprise web applications for federal government clients. Tech stack includes <span className="text-white">Java</span>, <span className="text-white">JavaScript/jQuery</span>, <span className="text-white">React</span>, <span className="text-white">Python</span>, <span className="text-white">Shell scripting (Bash/Zsh)</span>, <span className="text-white">SQL</span>, <span className="text-white">WebLogic 12c/14</span>, <span className="text-white">JSP</span>, <span className="text-white">CSS</span>, <span className="text-white">SAML/SSO</span>, <span className="text-white">Docker</span>, <span className="text-white">Git/GitHub</span>, <span className="text-white">Jenkins CI/CD</span>, and <span className="text-white">Maven</span>. Day-to-day work involves full-stack development, debugging production issues, writing automation scripts, and code archaeology through git history.
+                <span className="text-orange-500 font-semibold">mcgraw.io</span> builds custom software, automation systems, and AI-assisted workflows for small and midsize businesses. Core delivery includes product design, full-stack web apps, systems integrations, and operational tooling that reduce manual work and increase conversion speed. Primary stack includes <span className="text-white">TypeScript</span>, <span className="text-white">React/Next.js</span>, <span className="text-white">Node.js</span>, <span className="text-white">Python</span>, <span className="text-white">SQL</span>, <span className="text-white">Docker</span>, <span className="text-white">GitHub</span>, and <span className="text-white">CI/CD automation</span>.
               </p>
             </div>
 
@@ -472,7 +475,7 @@ export default function Home() {
             </div>
             <div className="pl-4 border-l-2 border-orange-500/30 mb-4">
               <p className="text-gray-400 text-sm italic">
-                Independent initiatives developed on personal time to solve real problems encountered at work.
+                Product and platform initiatives developed to improve accessibility, reliability, and automation outcomes for real client workflows.
               </p>
             </div>
 
@@ -493,6 +496,26 @@ export default function Home() {
             <div className="pl-4 border-l-2 border-neonGreen/30 mb-8">
               <p className="text-gray-300 leading-relaxed">
                 <span className="text-orange-500 font-semibold">Core Cracker</span> <span className="text-gray-500 text-xs">[solo project]</span> — Local development environment validation toolkit for VA enterprise applications on macOS ARM64. Automates verification of <span className="text-white">Zulu JDK 8</span>, <span className="text-white">WebLogic 12.2.1.4</span>, <span className="text-white">Maven</span>, and <span className="text-white">Docker/Colima</span> configurations. Includes auto-fix tools, properties backup/restore, and health diagnostics that map directly to the official VBMS Core deployment guide.
+              </p>
+            </div>
+
+            {/* Section 4: VA Acronyms Extension */}
+            <div className="text-green-400 mb-2 text-sm">
+              <span className="text-orange-500">$</span> cat ~/products/va-acronyms-extension.txt
+            </div>
+            <div className="pl-4 border-l-2 border-neonGreen/30 mb-8">
+              <p className="text-gray-300 leading-relaxed">
+                <span className="text-orange-500 font-semibold">VA Acronyms</span> <span className="text-gray-500 text-xs">[VS Code extension]</span> — Developer productivity extension for VA projects that expands and explains common acronyms inline while coding. It reduces context switching for onboarding and daily delivery work by surfacing domain-specific terminology directly in the editor.
+              </p>
+            </div>
+
+            {/* Section 5: AI Piloted Spaceship */}
+            <div className="text-green-400 mb-2 text-sm">
+              <span className="text-orange-500">$</span> cat ~/experiments/ai-piloted-spaceship.txt
+            </div>
+            <div className="pl-4 border-l-2 border-neonGreen/30 mb-8">
+              <p className="text-gray-300 leading-relaxed">
+                <span className="text-orange-500 font-semibold">AI-piloted spaceship demo</span> <span className="text-gray-500 text-xs">[interactive feature]</span> — The ship flying around this homepage is part of a real-time browser simulation focused on responsive controls, collision behavior, and dynamic scene updates. It demonstrates practical front-end engineering for interactive products, including game-loop logic, state management, and performance-aware rendering patterns.
               </p>
             </div>
 
@@ -525,6 +548,9 @@ export default function Home() {
                 <Link href="/more" className="text-gray-300 hover:text-orange-500 transition-colors">
                   <span className="text-neonGreen">→</span> more/
                 </Link>
+                <Link href="/automate" className="text-gray-300 hover:text-orange-500 transition-colors">
+                  <span className="text-neonGreen">→</span> automate/
+                </Link>
                 <a 
                   href="https://github.com/mmcgraw73" 
                   target="_blank" 
@@ -544,30 +570,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Status section */}
-            <div className="pt-6 border-t border-gray-700">
-              <div className="text-green-400 mb-3 text-sm">
-                <span className="text-orange-500">$</span> cat ./status.log
-              </div>
-              <div className="pl-4 space-y-2">
-                <p className="text-orange-500 text-sm flex items-center gap-2">
-                  <span className="text-gray-500">[INFO]</span> this portfolio is currently being built with next.js &amp; typescript
-                </p>
-                <p className="text-orange-500 text-sm flex items-center gap-2">
-                  <span className="text-gray-500">[INFO]</span> check back often for additional content and updates
-                </p>
-                <a 
-                  href="https://github.com/mmcgraw73/mcgraw" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-orange-500 text-sm flex items-center gap-2 hover:text-neonGreen transition-colors group"
-                >
-                  <span className="text-gray-500">[LINK]</span> 
-                  src @github 
-                  <span className="text-neonGreen opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                </a>
-              </div>
-            </div>
           </div>
 
           {/* Terminal Footer */}

@@ -60,16 +60,18 @@ interface PackageCardProps {
   features: string[];
   highlight?: boolean;
   price?: string;
+  ctaLabel?: string;
+  badge?: string;
 }
 
-function PackageCard({ title, features, highlight = false, price }: PackageCardProps) {
-  const emailHref = 'mailto:michael@mcgraw.io?subject=automate';
+function PackageCard({ title, features, highlight = false, price, ctaLabel = 'Get in touch', badge }: PackageCardProps) {
+  const emailHref = `mailto:michael@mcgraw.io?subject=${encodeURIComponent(`mcgraw.io - ${title}`)}`;
   return (
-    <Card className={`${highlight ? 'border-2 border-green-600 dark:border-green-500 relative' : ''}`}>
+    <Card className={`h-full ${highlight ? 'border-2 border-green-600 dark:border-green-500' : ''} relative`}>
       <div className="h-full flex flex-col">
-        {highlight && (
+        {badge && (
           <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-green-600 dark:bg-green-500 text-white dark:text-black px-3 py-1 rounded-full text-sm font-semibold">
-            Popular
+            {badge}
           </div>
         )}
         <div className="mb-4 pt-2">
@@ -93,7 +95,7 @@ function PackageCard({ title, features, highlight = false, price }: PackageCardP
             href={emailHref}
             className="inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600"
           >
-            {title}
+            {ctaLabel}
           </a>
         </div>
       </div>
@@ -449,43 +451,52 @@ export default function Automate() {
 
         {/* Packages */}
         <section id="packages" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">Start small. Improve fast.</h2>
-          <p className="text-center text-gray-600 dark:text-gray-300 mb-12 text-lg">
-            All packages include a free initial consultation to understand your biggest pain points.
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">Software shaped around your business.</h2>
+          <p className="text-center text-gray-600 dark:text-gray-300 mb-6 text-lg max-w-3xl mx-auto">
+            Custom dashboards and practical automation for home service businesses, starting with landscaping.
+            Start with a conversation, explore the demo, and help shape a solution for the way you work.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <p className="text-center text-gray-500 dark:text-gray-400 mb-12 max-w-3xl mx-auto">
+            The application is in early development. The demos illustrate possible workflows; live email, text,
+            and CRM integrations require separate setup. Subscription pricing has not been finalized.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             <PackageCard
-              title="Starter Tech Audit"
-              price="$99"
+              title="Workflow Consultation"
+              price="Free initial conversation"
+              ctaLabel="Talk About Your Workflow"
               features={[
-                'Website and workflow review',
-                'List of quick wins',
-                'Automation opportunities identified',
-                'Recommended next steps',
-                'Best for: Unsure where to start',
+                'Walk through how you handle inquiries, estimates, and follow-ups',
+                'Identify repetitive tasks and missed handoffs',
+                'Review the tools you already use',
+                'Discuss whether custom software would be useful',
+                'Agree on a practical next step with no commitment',
               ]}
             />
             <PackageCard
-              title="Custom Automation Setup"
-              price="$500+"
+              title="Early Access Pilot"
+              price="Discuss pilot availability"
               highlight={true}
+              badge="Early access"
+              ctaLabel="Ask About a Pilot"
               features={[
-                'Map one workflow end-to-end (intake to follow-up)',
-                'Build lead capture automation from form, email, or text',
-                'Set up AI field extraction (name, service, urgency, scope)',
-                'Auto-create records in your tracker/CRM with status tags',
-                'Deliver up to 3 production-ready automations with handoff docs',
+                'Explore the lead and job dashboard demo',
+                'Help define one workflow to test in your business',
+                'Agree on pilot features, timing, and any costs before starting',
+                'Test the agreed workflow and share feedback',
+                'Use the results to decide whether to continue',
               ]}
             />
             <PackageCard
-              title="Ongoing Automation Support"
-              price="Contact"
+              title="Business Subscription"
+              price="Pricing in development"
+              ctaLabel="Ask About Launch Plans"
               features={[
-                'Monthly service: 1 planning call + prioritized action list',
-                'Monitor existing automations and fix failed runs quickly',
-                'Implement monthly improvements to forms, workflows, and alerts',
-                'Add new automations as business processes change',
-                'Priority response for critical automation issues',
+                'Planned: a hosted dashboard for your business',
+                'Planned: customer inquiries, lead tracking, and follow-up workflows',
+                'Integrations added as supported services become available',
+                'Subscription features and support terms confirmed before signup',
+                'Any setup fees or third-party costs explained in advance',
               ]}
             />
           </div>
